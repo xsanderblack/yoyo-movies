@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SearchPage correctly 1`] = `
+<div>
+  <SearchInput
+    onChange={[Function]}
+    onSubmit={[Function]}
+    searchTerm=""
+  />
+</div>
+`;

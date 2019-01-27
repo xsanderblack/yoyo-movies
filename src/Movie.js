@@ -3,6 +3,8 @@ import MoviePoster from './MoviePoster';
 import ToggleMovieDetails from './ToggleMovieDetails';
 import ToggleFav from './ToggleFav';
 
+// Component renders movie information from props,
+// and passes necessary data to ToggleFav and ToggleMovieDetails components.
 const Movie = (props) => {
   const { id, title, poster_path, release_date } = props;
   return (

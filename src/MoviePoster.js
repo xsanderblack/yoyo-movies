@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import posterThumbnailSize from './poster-thumbnail-size.jpg';
-import posterFullSize from './poster-full-size.jpg';
+import posterThumbnailSize from './images/poster-thumbnail-size.jpg';
+import posterFullSize from './images/poster-full-size.jpg';
 import {
   POSTER_PATH_BASE,
   POSTER_THUMBNAIL_SIZE,
   POSTER_FULL_SIZE
 } from './Constants';
 
+// Component returns poster image in one of two sizes,
+// and replases broken links with default image.
 export default class MoviePoster extends Component {
   addDefaultImage = (e) => {
     const { size } = this.props;

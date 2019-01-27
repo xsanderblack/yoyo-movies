@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 
 export default class SearchInput extends Component {
-  state = {
-    searchTerm: ''
-  };
-
   onChange = (e) => {
     this.props.onChange(e.target.value);
   };

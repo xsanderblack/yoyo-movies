@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render MoviePoster correctly 1`] = `
+<img
+  onError={[Function]}
+  src="https://image.tmdb.org/t/p/undefinedundefined"
+/>
+`;

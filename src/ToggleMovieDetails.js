@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axiosWithCache from './axiosWithCache';
-// import axios from 'axios';
 import MovieDetailsScreen from './MovieDetailsScreen';
 import {
   PATH_BASE,
@@ -8,6 +7,8 @@ import {
   API_KEY
 } from './Constants';
 
+// Component renders button to show or hide movie details screen,
+// makes request and passes the result to MovieDetailsScreen component.
 export default class ToggleMovieDetails extends Component {
   state = {
     movie: null,
@@ -15,6 +16,8 @@ export default class ToggleMovieDetails extends Component {
     error: null
   };
   
+  // Methods checks, whenever movie details is displayed and closes it, if yes.
+  // If no, method makes request and populates the state with result.
   toggleMovieDetails = () => {
     const { movie, error } = this.state;
 
@@ -29,20 +32,9 @@ export default class ToggleMovieDetails extends Component {
         method: 'get'
       })
         .then(result => {
-          console.log(result);
-          if (result.request.fromCache) {
-            console.log('from cache');
-          } else {
-            console.log('no cache')
-          };
           this.setState({ movie: result.data, isLoading: false });
         })
         .catch(error => this.setState({ error, isLoading: false }));
-      // axios(`${PATH_BASE}${PATH_MOVIE}${this.props.id}?api_key=${API_KEY}`)
-      //   .then(result => {
-      //       this.setState({ movie: result.data, isLoading: false });
-      //   })
-      //   .catch(error => this.setState({ error, isLoading: false }));
     };
   };
 

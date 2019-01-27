@@ -14,15 +14,16 @@ const MovieDetailsScreen = ({
   <div>
     <MoviePoster size='full' path={poster_path} alt={title} />
     <ul>
-      <li>Release date: {release_date}</li>
-      <li>Countries: {production_countries.length > 0 &&
-        production_countries.map((country) => (
+      {release_date && <li>Release date: {release_date}</li>}
+      {production_countries &&
+        <li>Countries: {production_countries.map((country) =>
           <p key={country.iso_3166_1}>{country.name}</p>
-        )
-      )}</li>
-      <li>Run time: {runtime}</li>
-      <li>Rating: {vote_average}</li>
-      <li>Home page: {homepage}</li>
+        )}
+        </li>
+      }
+      {runtime && <li>Run time: {runtime}</li>}
+      {vote_average && <li>Rating: {vote_average}</li>}
+      {homepage && <li>Home page: {homepage}</li>}
     </ul>
     <p>{overview}</p>
   </div>

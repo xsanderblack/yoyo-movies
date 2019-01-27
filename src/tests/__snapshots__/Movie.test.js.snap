@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Movie correctly 1`] = `
+<div>
+  <MoviePoster
+    size="thumbnail"
+  />
+   - 
+   - 
+  <ToggleFav />
+  <ToggleMovieDetails />
+</div>
+`;

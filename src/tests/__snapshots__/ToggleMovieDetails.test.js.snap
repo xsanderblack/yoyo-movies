@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ToggleMovieDetails correctly 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+  >
+    Show Details
+  </button>
+  <div />
+</div>
+`;

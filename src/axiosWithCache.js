@@ -1,12 +1,13 @@
 import axios from 'axios';
 import { setupCache } from 'axios-cache-adapter';
 
-// Create `axios-cache-adapter` instance
+// Creates axios-cache-adapter instance and pass it to axios instance.
+// Exports axiosWithCache function, that can be used to make requests with enabled caching.
+
 const cache = setupCache({
   maxAge: 30 * 60 * 1000
 });
 
-// Create `axios` instance passing the newly created `cache.adapter`
 const axiosWithCache = axios.create({
   adapter: cache.adapter
 });
