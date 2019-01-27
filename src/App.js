@@ -1,28 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import FavoriteMovies from './FavoriteMovies';
+import SearchPage from './SearchPage';
 import './App.css';
 
 class App extends Component {
+  state = {
+    showSearchPage: true
+  };
+
+  onTogglePages = () => {
+    this.setState((prevState) => ({ showSearchPage: !prevState.showSearchPage }));
+  };
+
   render() {
+    const { showSearchPage } = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <button onClick={this.onTogglePages}>Search</button>
+        <button onClick={this.onTogglePages}>Favorits</button>
+        {showSearchPage ? <SearchPage /> : <FavoriteMovies />}
       </div>
     );
   }
-}
+};
 
 export default App;
